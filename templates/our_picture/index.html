@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% load cropping %}
+{% load staticfiles %}
+
+{% block content %}
+    <!-- BEGIN OUR TEAM -->
+    <!-- BEGIN PAGE CONTAINER -->
+<div class="page-container">
+
+
+<!-- BEGIN CONTAINER -->
+<div class="container min-hight margin-top-50">
+<div class="row front-team">
+<h1><strong>The COS Team</strong></h1>
+<p class="lead">Astronomers, biologists, chemists, computer scientists, education researchers, engineers, neuroscientists, and psychologists have come together to provide tools and services that benefit all sciences.</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <div class="row">
+                    {% for image in images %}
+                    <div class="col-md-3">
+                        <div class="circular" style="background: url({% cropped_thumbnail image "min_free_cropping" max_size=image.get_thumb_max_size %}); width: {{ image.thumb_image_width }}px; height: {{ image.thumb_image_height }}px">
+                        </div>
+                        <h4>{{ image.name }}</h4>
+                        <h5>{{ image.position }}</h5>
+                        {% if image.facebook_url %}
+                            <a href="{{ image.facebook_url }}" target="_blank"><img src="{% static "fb_icon.png" %}" /></a>
+                        {% endif %}
+                        {% if image.twitter_url %}
+                            <a href="{{ image.twitter_url }}" target="_blank"><img src="{% static "tw_icon.jpg" %}" /></a>
+                        {% endif %}
+                        {% if image.tumblr_url %}
+                            <a href="{{ image.tumblr_url }}" target="_blank"><img src="{% static "tm_icon.png" %}" /></a>
+                        {% endif %}
+                        {% if image.github_url %}
+                            <a href="{{ image.github_url }}" target="_blank"><img src="{% static "gh_icon.png" %}" /></a>
+                        {% endif %}
+                        {% if image.google_url %}
+                            <a href="{{ image.google_url }}" target="_blank"><img src="{% static "google.png" %}" /></a>
+                        {% endif %}
+                        {% if image.cos_url %}
+                            <a href="{{ image.cos_url }}" target="_blank"><img src="{% static "cos.ico" %}" /></a>
+                        {% endif %}
+                        {% if image.linkedin_url %}
+                            <a href="{{ image.linkedin_url }}" target="_blank"><img src="{% static "linkedin.png" %}" /></a>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

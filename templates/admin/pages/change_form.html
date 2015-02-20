@@ -1,0 +1,32 @@
+{% extends "admin/change_form.html" %}
+{% load admin_static %}
+
+{% block extrahead %}
+  {{ block.super }}
+<style>
+    #cke_id_body { margin-left: 106px;}
+</style>
+<script src="{% static "ckeditor/ckeditor.js" %}"></script>
+<script type="text/javascript">
+  if (django) {
+    django.jQuery(document).ready(function() {
+      var ckeditor_conf = {
+        toolbar : [
+           ['Styles','Format','Font','FontSize', '-','Bold','Italic','Underline','StrikeThrough','-','Undo','Redo','-','Outdent','Indent'],
+           ['NumberedList','BulletedList','Link','TextColor','BGColor','Source']
+        ],
+        htmlEncodeOutput : false,
+        forcePasteAsPlainText : true,
+        autoParagraph : false,
+        enterMode : CKEDITOR.ENTER_BR,
+        shiftEnterMode : CKEDITOR.ENTER_BR
+      };
+
+      if (django.jQuery('#id_body').length) {
+        CKEDITOR.replace('id_body', ckeditor_conf);
+      }
+    });
+  }
+</script>  
+{% endblock %}
+
