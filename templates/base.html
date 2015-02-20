@@ -25,21 +25,23 @@
     <!-- BEGIN THEME STYLES -->
     <link href="{% static '/static/css/style-metronic.css' %}" rel="stylesheet" type="text/css"/>
     <link href="{% static '/static/css/style.css'%}" rel="stylesheet" type="text/css"/>
-    <link href="{% static '/static/css/themes/blue.css' %}/static/css/themes/blue.css" rel="stylesheet" type="text/css" id="style_color"/>
+    <link href="{% static '/static/css/themes/blue.css' %}" rel="stylesheet" type="text/css" id="style_color"/>
     <link href="{% static '/static/css/style-responsive.css' %}" rel="stylesheet" type="text/css"/>
     <link href="{% static '/static/css/pages/portfolio.css' %}" rel="stylesheet" type="text/css"/>
     <link href="{% static '/static/css/custom.css' %}" rel="stylesheet" type="text/css"/>
     {% block stylesheets %}{% endblock %}
-    <link href="{% static '/static/plugins/jflickrfeed/style.css' %}" rel="stylesheet" type="text/css" media="all" />
-    <link href="{% static '/static/plugins/jflickrfeed/colorbox/colorbox.css' %}" rel="stylesheet" type="text/css" media="screen" />
 
 
 
-    <!-- END PAGE LEVEL PLUGIN STYLES -->
 
     <!-- END THEME STYLES -->
 
-    <!-- BEGIN FLICKR STYLES -->
+
+<!-- BEGIN FLICKR STYLES -->
+   <!-- uses jflickrfeed plugin http://www.newmediacampaigns.com/blog/a-jquery-flickr-feed-plugin -->
+    <link href="{% static '/static/plugins/jflickrfeed/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static '/static/plugins/jflickrfeed/colorbox/colorbox.css' %}" rel="stylesheet" type="text/css" media="screen" />
+    <!-- END FLICKR STYLES -->
 
 
     <script type="text/javascript">
@@ -165,7 +167,7 @@
 <div class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-sm-2 space-mobile">
+            <div class="col-md-4 col-sm-4 space-mobile">
                 <!-- BEGIN ABOUT -->
                 <h2>About</h2>
                 <p class="margin-bottom-30">The Center for Open Science fosters openness, integrity, and reproducibility of scientific research.</p>
